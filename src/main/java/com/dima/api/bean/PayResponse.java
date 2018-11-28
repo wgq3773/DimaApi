@@ -1,6 +1,7 @@
 package com.dima.api.bean;
 
 import java.io.Serializable;
+import java.util.Map;
 
 public class PayResponse implements Serializable {
 
@@ -14,6 +15,17 @@ public class PayResponse implements Serializable {
 	private String payStatus;
 	// 支付描述
 	private String payDesc;
+	// 支付参数Map
+	private Map<String, String> param;
+	
+
+	public Map<String, String> getParam() {
+		return param;
+	}
+
+	public void setParam(Map<String, String> param) {
+		this.param = param;
+	}
 
 	public String getRespondCode() {
 		return respondCode;
@@ -50,6 +62,6 @@ public class PayResponse implements Serializable {
 	@Override
 	public String toString() {
 		return "PayResponse [respondCode=" + respondCode + ", respondDesc=" + respondDesc + ", payStatus=" + payStatus
-				+ ", payDesc=" + payDesc + "]";
+				+ ", payDesc=" + payDesc + ", param=" + param + "]";
 	}
 }

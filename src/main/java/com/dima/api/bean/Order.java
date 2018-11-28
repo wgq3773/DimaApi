@@ -9,11 +9,13 @@ public class Order implements Serializable {
 
 	// 订单号
 	private String orderId;
+	// 订单用户ID
+	private String orderUserId;
 	// 订单金额（分）
 	private String orderMoney;
 	// 支付金额（分）
 	private String payMoney;
-	// 订单状态
+	// 订单状态	0:初始状态,1:支付中,2:支付待确认,3:已支付,4:退款中,5:已退款,6:异常订单
 	private String orderStatus;
 	// 订单生成时间
 	private Date orderGenData;
@@ -27,6 +29,14 @@ public class Order implements Serializable {
 	private String channelOrderId;
 	// 下游订单号
 	private String juniorOrderId;
+
+	public String getOrderUserId() {
+		return orderUserId;
+	}
+
+	public void setOrderUserId(String orderUserId) {
+		this.orderUserId = orderUserId;
+	}
 
 	public String getOrderId() {
 		return orderId;
@@ -110,10 +120,10 @@ public class Order implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Order [orderId=" + orderId + ", orderMoney=" + orderMoney + ", payMoney=" + payMoney + ", orderStatus="
-				+ orderStatus + ", orderGenData=" + orderGenData + ", payDate=" + payDate + ", notifyDate=" + notifyDate
-				+ ", orderDesc=" + orderDesc + ", channelOrderId=" + channelOrderId + ", juniorOrderId=" + juniorOrderId
-				+ "]";
+		return "Order [orderId=" + orderId + ", orderUserId=" + orderUserId + ", orderMoney=" + orderMoney
+				+ ", payMoney=" + payMoney + ", orderStatus=" + orderStatus + ", orderGenData=" + orderGenData
+				+ ", payDate=" + payDate + ", notifyDate=" + notifyDate + ", orderDesc=" + orderDesc
+				+ ", channelOrderId=" + channelOrderId + ", juniorOrderId=" + juniorOrderId + "]";
 	}
 
 }
